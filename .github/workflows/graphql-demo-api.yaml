@@ -7,7 +7,7 @@ on:
   push:
     paths:
       - demo_7/**
-      - '!demo_7/README.md'
+      - "!demo_7/README.md"
     branches:
       - master
 
@@ -47,5 +47,5 @@ jobs:
 
       - name: Push to repository
         run: |
-          docker login --username sthristov --password ${{ secrets.DOCKER_HUB_PASSWORD }}
+          docker login --username $DOCKER_HUB_USERNAME --password ${{ secrets.DOCKER_HUB_PASSWORD }}
           docker image push --all-tags $DOCKER_HUB_REPO
