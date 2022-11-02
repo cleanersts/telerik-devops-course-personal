@@ -17,6 +17,7 @@ docker run --name nginx -d -v $(pwd)/page:/usr/share/nginx/html:ro -p 80:80 ngin
 docker exec nginx touch /usr/share/nginx/html/container_ro
 ls -la page/
 docker rm -f nginx
+rm -f page/container_rw
 ```
 
 ## Navigation
