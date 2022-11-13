@@ -24,7 +24,7 @@ docker network ls
 docker run --name nginx1 -d nginx:1.20-alpine
 docker run --name nginx2 -d nginx:1.20-alpine
 docker network inspect bridge | jq
-docker exec nginx1 ping -c 1 8.8.8.8
+docker exec nginx1 ping -c 1 8.8.8.8 <= need to check
 CONTAINER_IP=$(docker inspect nginx2 | jq -r .[0].NetworkSettings.IPAddress)
 docker exec nginx1 ping -c 1 $CONTAINER_IP
 docker exec nginx1 ping -c 1 nginx2
