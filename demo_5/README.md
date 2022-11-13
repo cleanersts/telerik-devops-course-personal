@@ -12,7 +12,7 @@ docker rm -f nginx
 docker run --name nginx -d -p 80:80 nginx:1.20-alpine
 docker ps
 nmap localhost
-nmap -Pn -F docker # On the workstation
+nmap -Pn -F docker # On the workstation <= need to check
 curl http://docker # On the workstation
 docker rm -f nginx
 ```
